@@ -11,16 +11,11 @@ public abstract class AAttacker : MonoBehaviour
 
 	protected virtual void OnCollisionEnter( Collision collision )
 	{
-		Missile missile = collision.gameObject.GetComponent<Missile>();
-		if ( missile != null )
+		if ( collision.gameObject.GetComponent<Missile>()?.target == transform )
 		{
-			if ( missile.target = transform )
-			{
-				Player.I.RemoveAttacker( this );
-				Destroy();
-				GameManager.I.IncreaseScore( Random.Range( 1 , 3 ) );
-				Destroy( collision.gameObject );
-			}
+			Player.I.RemoveAttacker( this );
+			Destroy();
+			Destroy( collision.gameObject );
 		}
 	}
 

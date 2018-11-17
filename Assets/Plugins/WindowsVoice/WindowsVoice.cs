@@ -1,9 +1,10 @@
-﻿using UnityEngine;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 using System.Text;
+using UnityEngine;
 
 public class WindowsVoice : MonoBehaviour
 {
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
 	[DllImport( "WindowsVoice" )]
 	public static extern void initSpeech( );
 	[DllImport( "WindowsVoice" )]
@@ -15,8 +16,9 @@ public class WindowsVoice : MonoBehaviour
 	[DllImport( "WindowsVoice" )]
 	public static extern void statusMessage( StringBuilder str , int length );
 	public static WindowsVoice I = null;
+
 	// Use this for initialization
-	void OnEnable( )
+	private void OnEnable( )
 	{
 		if ( I == null )
 		{
@@ -29,7 +31,7 @@ public class WindowsVoice : MonoBehaviour
 	}
 	public static void Speak( string msg ) => addToSpeechQueue( msg );
 
-	void OnDestroy( )
+	private void OnDestroy( )
 	{
 		if ( I == this )
 		{
@@ -44,4 +46,7 @@ public class WindowsVoice : MonoBehaviour
 		statusMessage( sb , 40 );
 		return sb.ToString();
 	}
+#else
+	public static void Speak( string msg ){}
+#endif
 }

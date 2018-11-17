@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Utilities.Extensions
+namespace Utilities
 {
 	/// <summary>
 	/// Extension library for Components and GameObjects

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Utilities.Extensions;
+using Utilities;
 
 public class Player : Singleton<Player>
 {

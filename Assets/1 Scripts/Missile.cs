@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Utilities.Extensions;
+using Utilities;
 
 public class Missile : MonoBehaviour
 {

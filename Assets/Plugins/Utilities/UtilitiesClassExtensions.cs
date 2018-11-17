@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Utilities.Extensions
+namespace Utilities
 {
     /// <summary>
     /// The main utilities extension class
