@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteroid Busters-Flag Pack AR+VR", "Assembly-CSharp.csproj", "{01D9BC53-FB2B-F1E6-E046-20E8E056F06E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteroid Busters-Flag Pack AR+VR", "Assembly-CSharp-firstpass.csproj", "{3C8A01E3-2504-88F9-4D35-A3E83E82FB29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteroid Busters-Flag Pack AR+VR", "Assembly-CSharp-Editor.csproj", "{D1744B67-CC28-AAE6-DF7A-C1C95AB94057}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01D9BC53-FB2B-F1E6-E046-20E8E056F06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D9BC53-FB2B-F1E6-E046-20E8E056F06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D9BC53-FB2B-F1E6-E046-20E8E056F06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D9BC53-FB2B-F1E6-E046-20E8E056F06E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C8A01E3-2504-88F9-4D35-A3E83E82FB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8A01E3-2504-88F9-4D35-A3E83E82FB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C8A01E3-2504-88F9-4D35-A3E83E82FB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C8A01E3-2504-88F9-4D35-A3E83E82FB29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1744B67-CC28-AAE6-DF7A-C1C95AB94057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1744B67-CC28-AAE6-DF7A-C1C95AB94057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1744B67-CC28-AAE6-DF7A-C1C95AB94057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1744B67-CC28-AAE6-DF7A-C1C95AB94057}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
