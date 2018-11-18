@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Planet : Singleton<Planet>
+public class Planet : Singleton_<Planet>
 {
 #pragma warning disable 0649
 	[SerializeField] Vector3 axis;

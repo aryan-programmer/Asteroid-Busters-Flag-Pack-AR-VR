@@ -204,7 +204,6 @@ namespace Utilities
 		/// <summary>
 		/// Returns a new array in a different memory location,
 		/// the new array being identical to the array you passed in as a parameter.
-		/// (Refer at C or C++ pointers to know why arrays are like this)
 		/// </summary>
 		/// <typeparam name="T">
 		/// The type of the array you want to duplicate
@@ -215,7 +214,6 @@ namespace Utilities
 		/// <returns>
 		/// A new array in a different memory location,
 		/// the new array being identical to the array you passed in as a parameter.
-		/// (Again Refer at C or C++ pointers to know why arrays are like this)
 		/// </returns>
 		public static T[] DuplicateArray<T>( T[] arrayToDuplicate )
 		{

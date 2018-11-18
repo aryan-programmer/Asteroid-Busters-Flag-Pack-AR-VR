@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Singletons : Singleton<Singletons>,
+public class Singletons : Singleton_<Singletons>,
 	IReadOnlyDictionary<System.Type , Behaviour>
 {
 	[System.Serializable]

@@ -279,6 +279,9 @@
     <Reference Include="Google.ProtocolBuffers">
       <HintPath>E:/Unity Game Projects/AR+VR=MR Hack/Asteroid Busters-Flag Pack AR+VR/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
     </Reference>
+    <Reference Include="InfinityEngine">
+      <HintPath>E:/Unity Game Projects/AR+VR=MR Hack/Asteroid Busters-Flag Pack AR+VR/Assets/InfinityEngine/Scripts/InfinityEngine.dll</HintPath>
+    </Reference>
     <Reference Include="LeanTween">
       <HintPath>E:/Unity Game Projects/AR+VR=MR Hack/Asteroid Busters-Flag Pack AR+VR/Assets/Plugins/LeanTween/LeanTween.dll</HintPath>
     </Reference>

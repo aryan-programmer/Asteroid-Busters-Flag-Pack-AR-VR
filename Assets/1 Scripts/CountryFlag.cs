@@ -26,7 +26,7 @@ public class CountryFlag : MonoBehaviour
 		transform.parent = null;
 		var randTex = statics.textures.GetRandomElement();
 		GetComponent<MeshRenderer>().material.mainTexture = randTex;
-		WindowsVoice.Speak( randTex.name );
+		Speaker.Speak( randTex.name );
 		print( randTex.name );
 		transform.localScale *= Mathf.Abs( Vector3.Distance( Player.I.transform.position , transform.position ) );
 		Destroy( gameObject , statics.FlagDisplayTime );

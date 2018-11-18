@@ -73,6 +73,7 @@
     <Compile Include="Assets\1 Scripts\Player.cs" />
     <Compile Include="Assets\1 Scripts\Prefabs.cs" />
     <Compile Include="Assets\1 Scripts\Singletons.cs" />
+    <Compile Include="Assets\1 Scripts\Speaker.cs" />
     <Compile Include="Assets\1 Scripts\StartScene.cs" />
     <Compile Include="Assets\1 Scripts\WebCamDisplay.cs" />
     <Compile Include="Assets\GoogleVR\Legacy\Scripts\Audio\GvrAudio.cs" />
@@ -165,13 +166,38 @@
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrVRHelpers.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
-    <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Scripts\Flag.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Scripts\ISILocalization.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Scripts\ISIString.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Scripts\Language.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Scripts\LanguageExtensions.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Scripts\Locale.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Scripts\LocalizedAudio.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Scripts\LocalizedLanguage.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Scripts\LocalizedSprite.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Scripts\LocalizedString.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\SpeechEngine\Scripts\LocaleExtensions.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\SpeechEngine\Scripts\SpeechEngine.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\SpeechEngine\Scripts\SpeechEngineStatus.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\SpeechEngine\Scripts\SpeechEngineTest.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\SpeechEngine\Scripts\TTSEngine.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\SpeechEngine\Scripts\Voice.cs" />
+    <Compile Include="Assets\InfinityEngine\Gen\Scripts\R3.cs" />
+    <Compile Include="Assets\InfinityEngine\Scripts\AssetReferences.cs" />
+    <Compile Include="Assets\InfinityEngine\Scripts\BlendingEffect.cs" />
+    <Compile Include="Assets\InfinityEngine\Scripts\PlaySoundOnClick.cs" />
+    <None Include="Assets\Effects\Shared\Shaders\SurfaceShader_VC.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
+    <None Include="Assets\InfinityEngine\Gen\Xml\ISI Localization\French\strings.xml" />
+    <None Include="Assets\InfinityEngine\Gen\Xml\ISI Localization\English\strings.xml" />
+    <None Include="Assets\InfinityEngine\COMPILER_ERRORS.txt" />
     <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />
+    <None Include="Assets\InfinityEngine\Scripts\README.txt" />
     <None Include="Assets\GoogleVR\Shaders\GvrController.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlay.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlayColor.shader" />
     <None Include="Assets\GoogleVR\Plugins\Android\AndroidManifest-6DOF.xml" />
+    <None Include="Assets\InfinityEngine\DOCUMENTATION.txt" />
     <None Include="Assets\GoogleVR\Shaders\Video\VideoUnlitShader.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrUnlitTextureOverlay.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrControllerReticle.shader" />
@@ -180,6 +206,7 @@
     <None Include="Assets\GoogleVR\Shaders\GvrUIOverlay.shader" />
     <None Include="Assets\GoogleVR\Plugins\Android\proguard-gvr.txt" />
     <None Include="Assets\GoogleVR\Plugins\Android\AndroidManifest-Cardboard.xml" />
+    <None Include="Assets\InfinityEngine\Scripts\InfinityEngine.xml" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/Unity Game Projects/AR+VR=MR Hack/Asteroid Busters-Flag Pack AR+VR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
@@ -389,6 +416,9 @@
     </Reference>
     <Reference Include="Google.ProtocolBuffers">
       <HintPath>E:/Unity Game Projects/AR+VR=MR Hack/Asteroid Busters-Flag Pack AR+VR/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="InfinityEngine">
+      <HintPath>E:/Unity Game Projects/AR+VR=MR Hack/Asteroid Busters-Flag Pack AR+VR/Assets/InfinityEngine/Scripts/InfinityEngine.dll</HintPath>
     </Reference>
     <Reference Include="LeanTween">
       <HintPath>E:/Unity Game Projects/AR+VR=MR Hack/Asteroid Busters-Flag Pack AR+VR/Assets/Plugins/LeanTween/LeanTween.dll</HintPath>

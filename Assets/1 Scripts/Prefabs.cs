@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Prefabs : Singleton<Prefabs>, 
+public class Prefabs : Singleton_<Prefabs>, 
 	IReadOnlyDictionary<string, GameObject>
 {
 	[System.Serializable]

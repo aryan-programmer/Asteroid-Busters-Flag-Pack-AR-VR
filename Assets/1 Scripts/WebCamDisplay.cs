@@ -20,7 +20,7 @@ public class WebCamDisplay : MonoBehaviour
 			new Vector3( 
 				0 , 
 				0 , 
-				scale * transform.localScale.x / 22.22F );
+				scale * 5.4825f );
 		if ( Application.isMobilePlatform )
 			transform.localScale = new Vector3( 
 				-transform.localScale.x , 

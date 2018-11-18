@@ -2,7 +2,7 @@
 using UnityEngine;
 using Utilities;
 
-public class Player : Singleton<Player>
+public class Player : Singleton_<Player>
 {
 #pragma warning disable 0649
 	[SerializeField] GameObject[] missiles;

@@ -73,6 +73,37 @@
     <Compile Include="Assets\GoogleVR\Legacy\Editor\Audio\GvrAudioRoomEditor.cs" />
     <Compile Include="Assets\GoogleVR\Legacy\Editor\Audio\GvrAudioSoundfieldEditor.cs" />
     <Compile Include="Assets\GoogleVR\Legacy\Editor\Audio\GvrAudioSourceEditor.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\BuiltInResourcesWindow.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\InfinityEditor.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Drawers\InfinityHeaderDrawer.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Drawers\MinMaxRangeDrawer.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Drawers\PopupPropertyDrawer.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Drawers\ScenePropertyDrawer.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\CustomInspector.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\InspectorAccordion.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\InspectorAccordionGroup.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\InspectorArrayDrawer.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\InspectorButtonMethod.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\InspectorCollectionDrawer.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\InspectorData.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\InspectorDrawer.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\InspectorTabGroup.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\SerializedField.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\SerializedMember.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Inspector\Scripts\TabDrawer.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Utils\DrawerHelper.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Utils\EditorReflection.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Utils\EditorUtils.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Utils\SimpleAccordion.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Utils\SpriteSlicer.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Window\Frame.cs" />
+    <Compile Include="Assets\InfinityEngine\Editor\Window\SplitPane.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Editor\GoogleTranslateEditor.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Editor\ISILocalizationEditor.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Editor\ISILocalizationEditor.Strings.cs" />
+    <Compile Include="Assets\InfinityEngine\Frameworks\ISI Localization\Editor\ISILocalizationInspector.cs" />
+    <None Include="Assets\InfinityEngine\Editor\Resources\Fonts\NotoSans-hinted\LICENSE_OFL.txt" />
+    <None Include="Assets\InfinityEngine\Editor\Resources\Fonts\NotoSansDevanagari-hinted\LICENSE_OFL.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/Unity Game Projects/AR+VR=MR Hack/Asteroid Busters-Flag Pack AR+VR/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
@@ -336,6 +367,9 @@
     </Reference>
     <Reference Include="Google.ProtocolBuffers">
       <HintPath>E:/Unity Game Projects/AR+VR=MR Hack/Asteroid Busters-Flag Pack AR+VR/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="InfinityEngine">
+      <HintPath>E:/Unity Game Projects/AR+VR=MR Hack/Asteroid Busters-Flag Pack AR+VR/Assets/InfinityEngine/Scripts/InfinityEngine.dll</HintPath>
     </Reference>
     <Reference Include="LeanTween">
       <HintPath>E:/Unity Game Projects/AR+VR=MR Hack/Asteroid Busters-Flag Pack AR+VR/Assets/Plugins/LeanTween/LeanTween.dll</HintPath>
