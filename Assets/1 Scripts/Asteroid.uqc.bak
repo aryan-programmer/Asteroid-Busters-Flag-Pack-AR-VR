@@ -1,0 +1,35 @@
+<QC>
+Using UnityEngine
+
+Public <Class> Asteroid Inherits AAttacker
+#pragma warning disable 0649 _
+	[SerializeField] GameObject[] particles
+	[SerializeField] AudioClip boom
+#pragma warning restore 0649 _
+
+	Private Float rotationRate
+	Private Vector3 rotationAxis
+
+	Protected Override <Function> Volume() Gives Float 
+		Give 1
+	</>
+	Protected Override <Function> Particles() Gives GameObject[]
+		Give particles
+	</>
+	Protected Override <Function> Boom() Gives AudioClip
+		Give boom
+	</>
+
+	<Function> Start( )
+		Vector3 target = Planet.I.transform.position
+		GetComponent[[Rigidbody]]().AddForce( ( target - transform.position ).normalized * Random.Range( 150f , 250f ) )
+
+		rotationRate = Random.Range( 30f , 100f )
+		rotationAxis = Random.onUnitSphere
+	</>
+
+	<Function> Update( )
+		transform.Rotate( rotationAxis , Time.deltaTime * rotationRate , Space.World );
+	</>
+</>
+</>

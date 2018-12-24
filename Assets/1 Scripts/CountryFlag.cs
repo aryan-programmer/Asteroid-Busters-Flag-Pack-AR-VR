@@ -1,22 +1,23 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Utilities;
-
-public class CountryFlag : MonoBehaviour
+public
+class CountryFlag: MonoBehaviour
 {
-	internal static CountryFlag Instantiate( Vector3 pos ) =>
-		Instantiate( Prefabs.I[ "CountryFlag" ] , pos , Quaternion.identity ).
-		GetComponent<CountryFlag>();
+	public static
+	CountryFlag Instantiate( Vector3 pos )
+	{
+		return Instantiate( Prefabs.I[@"CountryFlag"
+		] , pos , Quaternion.identity ).GetComponent<CountryFlag>();
 
+	}
 	[System.Serializable]
-	internal struct Statics
+	struct Statics
 	{
 		public float FlagDisplayTime;
 		public Texture[] textures;
+
 	}
-
 	[SerializeField] Statics statics;
-
-	// Use this for initialization
 	void Start( )
 	{
 		transform.LookAt( transform.parent = Player.I.transform );
@@ -30,5 +31,7 @@ public class CountryFlag : MonoBehaviour
 		print( randTex.name );
 		transform.localScale *= Mathf.Abs( Vector3.Distance( Player.I.transform.position , transform.position ) );
 		Destroy( gameObject , statics.FlagDisplayTime );
+
 	}
+
 }

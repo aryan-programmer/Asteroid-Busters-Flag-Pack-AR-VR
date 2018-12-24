@@ -1,13 +1,22 @@
-﻿using UnityEngine;
-
-public class GameOverScene : MonoBehaviour
+using UnityEngine;
+public
+class GameOverScene : MonoBehaviour
 {
-	public void Quit( ) =>
-#if UNITY_EDITOR
+	public
+	void Quit( )
+	{
+		#if UNITY_EDITOR
 		UnityEditor.EditorApplication.isPlaying = false;
-#else
+		#else
 		Application.Quit();
-#endif
+		#endif
 
-	public void Replay( ) => Utilities.SceneManagemant.LoadLevel( Constants.GameSceneIdx );
+	}
+	public
+	void Replay( )
+	{
+		Utilities.SceneManagemant.LoadLevel( Constants.GameSceneIdx );
+
+	}
+
 }

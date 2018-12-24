@@ -1,0 +1,34 @@
+<QC>
+Using UnityEngine
+Using Utilities
+Using Utilities.Timers
+
+Public <Class> GameManager Inherits Singleton_[[GameManager]]
+#pragma warning disable 0649 _
+	[SerializeField] GameObject[ ] AsteroidPrefabs
+#pragma warning restore 0649 _
+
+	RandomizedIncreaseingTimer SpawnTimer
+
+	<Function> Start( )
+		SpawnTimer = New RandomizedIncreaseingTimer( _
+			_secondsBetweenTicksMin: 1.5f , _secondsBetweenTicksMax: 10f , _
+			_decreaseInSecondsBetweenTicksMaxMin: 0.5f , _decreaseInSecondsBetweenTicksMaxMax: 0.75f , _
+			_functionToCallEachTick: SpawnAsteroids )
+	</>
+	<Function> Update( )
+		SpawnTimer.OnUpdate()
+	</>
+	<Function> ResetRotation( ) 
+		LeanTween.rotate( Camera.main.gameObject , Vector3.zero , 0.75f )
+	</>
+	<Function> SpawnAsteroids( )
+		Instantiate( AsteroidPrefabs.GetRandomElement() , Planet.I.transform.position + ( Random.onUnitSphere * 40 ) , Random.rotation ). _
+			transform.localScale = Vector3.one * Random.Range( 0.25f , 0.95f )
+	</>
+
+	Public <Function> GUIGameOver( )
+		SceneManagemant.LoadLevel( Constants.DeathSceneIdx )
+	</>
+</>
+</>

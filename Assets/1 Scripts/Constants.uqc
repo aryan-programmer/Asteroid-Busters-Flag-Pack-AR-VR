@@ -1,0 +1,5 @@
+<QC>
+Public Static <Class> Constants
+	Public Constant Int StartSceneIdx = 0, GameSceneIdx = 1, DeathSceneIdx = 2
+</>
+</>

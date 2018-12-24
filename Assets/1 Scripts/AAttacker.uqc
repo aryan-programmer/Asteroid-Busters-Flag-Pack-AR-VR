@@ -1,0 +1,32 @@
+<QC>
+Using UnityEngine
+
+Public Abstract <Class> AAttacker Inherits MonoBehaviour
+	<Abstract>
+	Volume() Gives Float
+	Particles() Gives GameObject[ ]
+	Boom() Gives AudioClip
+	</>
+
+	Public Virtual <Function> OnLook( ) 
+		Player.I.LookAtAttacker( Me )
+	</>
+
+	Protected Virtual <Function> OnCollisionEnter( Collision collision )
+		<If> collision.gameObject.GetComponent[[Missile]]()?.Target == transform
+			Player.I.RemoveAttacker( Me )
+			Destroy()
+			Destroy( collision.gameObject )
+		</>
+	</>
+
+	Protected Virtual <Function> Destroy( )
+		<ForEach> GameObject particle In Particles()
+			Destroy( Instantiate( particle , transform.position , Quaternion.identity ) , 5 )
+		</Next>
+		Planet.I.SAudioSource.PlayOneShot( Boom() , Volume() )
+		CountryFlag.Instantiate( transform.position )
+		Destroy( gameObject )
+	</>
+</>
+</>

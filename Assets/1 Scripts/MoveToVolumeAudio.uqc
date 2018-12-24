@@ -1,0 +1,21 @@
+<QC>
+Using UnityEngine
+
+Public <Class> MoveToVolumeAudio Inherits MonoBehaviour
+#pragma warning disable 0649 _
+	[SerializeField] Float ToVolume, speed = 1
+#pragma warning restore 0649 _
+
+	AudioSource __audioSource
+
+	Public <Property> SAudioSource Of AudioSource
+		<Get>
+			Give __audioSource ?? (__audioSource = GetComponent[[AudioSource]]())
+		</>
+	</>
+
+	<Function> Update( )
+		SAudioSource.volume = Mathf.Lerp( SAudioSource.volume , ToVolume , Time.deltaTime * speed )
+	</>
+</>
+</>

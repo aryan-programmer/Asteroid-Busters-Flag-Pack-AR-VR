@@ -1,41 +1,100 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Prefabs : Singleton_<Prefabs>, 
-	IReadOnlyDictionary<string, GameObject>
+using System.Linq;
+public
+class Prefabs: Singleton_<Prefabs> ,  IReadOnlyDictionary<string, GameObject>
 {
 	[System.Serializable]
 	struct GameObjectAndID
 	{
 		[SerializeField] public string id;
 		[SerializeField] public GameObject prefab;
+
 	}
 	[SerializeField] GameObjectAndID[] m_prefab;
-
-	Dictionary<string , GameObject> prefabs;
-
-	#region IReadOnlyDictionary<string, GameObject>
-	public IEnumerable<string> Keys => prefabs.Keys;
-
-	public IEnumerable<GameObject> Values => prefabs.Values;
-
-	public int Count => prefabs.Count;
-
-	public GameObject this[ string key ] => prefabs[ key ];
-
-	public bool ContainsKey( string key ) => prefabs.ContainsKey( key );
-	public bool TryGetValue( string key , out GameObject value ) =>
-		prefabs.TryGetValue( key , out value );
-	public IEnumerator<KeyValuePair<string , GameObject>> GetEnumerator( ) =>
-		prefabs.GetEnumerator();
-	IEnumerator IEnumerable.GetEnumerator( ) => prefabs.GetEnumerator();
-	#endregion
-
-	private void Start( )
+	Dictionary<string, GameObject> prefabs;
+	// Region IReadOnlyDictionary<string, GameObject>;
+	public
+	System.Collections.Generic.IEnumerable<string> Keys
 	{
-		prefabs = new Dictionary<string , GameObject>( m_prefab.Length );
-		foreach ( var prefab in m_prefab )
-			prefabs.Add( prefab.id , prefab.prefab );
+
+		get
+		{
+			return prefabs.Keys;
+
+
+		}
+
 	}
+	public
+	System.Collections.Generic.IEnumerable<GameObject> Values
+	{
+
+		get
+		{
+			return prefabs.Values;
+
+
+		}
+
+	}
+	public
+	int Count
+	{
+
+		get
+		{
+			return prefabs.Count;
+
+
+		}
+
+	}
+	public
+	GameObject this[ string key ]
+	{
+
+		get
+		{
+			return prefabs[ key ];
+
+
+		}
+
+	}
+	public
+	bool ContainsKey( string key )
+	{
+		return prefabs.ContainsKey( key );
+
+	}
+	public
+	bool TryGetValue( string key , out GameObject value )
+	{
+		return prefabs.TryGetValue( key , out value );
+
+	}
+	public
+	System.Collections.Generic.IEnumerator<KeyValuePair<string , GameObject>> GetEnumerator( )
+	{
+		return prefabs.GetEnumerator();
+
+	}
+	System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator( )
+	{
+		return prefabs.GetEnumerator();
+
+	}
+	// EndRegion;
+	void Start( )
+	{
+		prefabs = m_prefab.ToDictionary( delegate( GameObjectAndID prefab ) {
+		return prefab.id;
+		}, delegate( GameObjectAndID prefab ) {
+		return prefab.prefab;
+		} );
+
+	}
+
 }

@@ -1,19 +1,27 @@
-﻿using UnityEngine;
-
-public class MoveToVolumeAudio : MonoBehaviour
+using UnityEngine;
+public
+class MoveToVolumeAudio: MonoBehaviour
 {
-#pragma warning disable 0649
+	#pragma warning disable 0649
 	[SerializeField] float ToVolume, speed = 1;
-#pragma warning restore 0649
-
+	#pragma warning restore 0649
 	AudioSource __audioSource;
+	public
+	AudioSource SAudioSource
+	{
 
-	public AudioSource SAudioSource => __audioSource ?? (__audioSource = GetComponent<AudioSource>());
+		get
+		{
+			return __audioSource ?? (__audioSource = GetComponent<AudioSource>());
 
-	void Update( ) =>
-		SAudioSource.volume =
-		Mathf.Lerp(
-			SAudioSource.volume ,
-			ToVolume ,
-			Time.deltaTime * speed );
+
+		}
+
+	}
+	void Update( )
+	{
+		SAudioSource.volume = Mathf.Lerp( SAudioSource.volume , ToVolume , Time.deltaTime * speed );
+
+	}
+
 }

@@ -1,0 +1,17 @@
+<QC>
+Using UnityEngine
+
+Public <Class> GameOverScene : MonoBehaviour
+	Public <Function> Quit( )
+#if UNITY_EDITOR _
+		UnityEditor.EditorApplication.isPlaying = False
+#else _
+		Application.Quit()
+#endif _
+	</>
+
+	Public <Function> Replay( )
+		Utilities.SceneManagemant.LoadLevel( Constants.GameSceneIdx )
+	</>
+</>
+</>

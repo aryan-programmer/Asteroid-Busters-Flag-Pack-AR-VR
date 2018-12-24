@@ -1,0 +1,38 @@
+<QC>
+Using System.Collections
+Using UnityEngine
+
+Public <Class> Planet Inherits Singleton_[[Planet]]
+#pragma warning disable 0649 _
+	[SerializeField] Vector3 axis
+	[SerializeField] Float Speed
+	[SerializeField] GameObject[] particles
+	[SerializeField] AudioClip death
+#pragma warning restore 0649 _
+	AudioSource __audioSource
+
+	Public <Property> SAudioSource Of AudioSource
+		<Get> Give __audioSource ?? (__audioSource = GetComponent[[AudioSource]]()) </>
+	</>
+
+	<Function> FixedUpdate( )
+		transform.Rotate( axis , Time.fixedDeltaTime * Speed , Space.Self )
+	</>
+
+	<Function> OnCollisionEnter( Collision collision )
+		<If> collision.gameObject.GetComponent[[Asteroid]]()
+			StartCoroutine( GameOver( collision.transform.position ) )
+			Destroy( collision.gameObject )
+		</>
+	</>
+
+	<Function> GameOver( Vector3 pos ) Gives IterGen
+		<ForEach> GameObject particle In particles
+			Instantiate( particle , pos , Quaternion.identity )
+		</Next>
+		SAudioSource.PlayOneShot( death , 5 )
+		AlsoGive New WaitForSeconds( 3f )
+		GameManager.I.GUIGameOver()
+	</>
+</>
+</>

@@ -1,0 +1,47 @@
+<QC>
+Using System.Collections
+Using System.Collections.Generic
+Using UnityEngine
+Using System.Linq
+
+Public <Class> Prefabs Inherits Singleton_[[Prefabs]] And IReadOnlyDictionary[[String, GameObject]]
+	[System.Serializable] <Structure> GameObjectAndID
+		[SerializeField] Public String id
+		[SerializeField] Public GameObject prefab
+	</>
+	[SerializeField] GameObjectAndID[] m_prefab
+
+	Dictionary[[String, GameObject]] prefabs
+
+	REM Region IReadOnlyDictionary[[string, GameObject]]
+	Public <Property> Keys Of GenOf[[String]]
+		<Get> Give prefabs.Keys </>
+	</>
+	Public <Property> Values Of GenOf[[GameObject]] 
+		<Get>Give prefabs.Values </>
+	</>
+	Public <Property> Count Of Int <Get> Give prefabs.Count </> </>
+	Public <Indexer> [ String key ] Of GameObject <Get> Give prefabs[ key ] </> </>
+	Public <Function> ContainsKey( String key ) Gives Bool
+		Give prefabs.ContainsKey( key )
+	</>
+	Public <Function> TryGetValue( String key , Out GameObject value ) Gives Bool
+		Give prefabs.TryGetValue( key , out value )
+	</>
+	Public <Function> GetEnumerator( ) Gives IterGenOf[[KeyValuePair[[String , GameObject]]]]
+		Give prefabs.GetEnumerator()
+	</>
+	<Function> Gen.GetEnumerator( ) Gives IterGen
+		Give prefabs.GetEnumerator()
+	</>
+	REM EndRegion
+
+	<Function> Start( )
+		prefabs = m_prefab.ToDictionary( Delegate( GameObjectAndID prefab ) { _
+			Give prefab.id
+		}, Delegate( GameObjectAndID prefab ) { _
+			Give prefab.prefab
+		} )
+	</>
+</>
+</>

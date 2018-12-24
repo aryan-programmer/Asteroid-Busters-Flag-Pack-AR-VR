@@ -1,0 +1,30 @@
+<QC>
+Using System.Collections.Generic
+Using UnityEngine
+Using Utilities
+
+Public <Class> Player Inherits Singleton_[[Player]]
+#pragma warning disable 0649 _
+	[SerializeField] GameObject[] missiles
+	[SerializeField] Transform spawnPoint1, spawnPoint2
+#pragma warning restore 0649 _
+
+	List[[GameObject]] prevHitTargets = New List[[GameObject]]()
+
+	Internal <Function> RemoveAttacker( AAttacker attacker )
+		prevHitTargets.Remove( attacker.gameObject )
+	</>
+
+	Internal <Function> LookAtAttacker( AAttacker attacker )
+		<If> !prevHitTargets.Contains( attacker.gameObject )
+			GameObject missile = missiles.GetRandomElement()
+			Auto missile1 = Instantiate( missile , spawnPoint1.position , transform.rotation , Null ).GetComponent[[Missile]]()
+			Auto missile2 = Instantiate( missile , spawnPoint2.position , transform.rotation , Null ).GetComponent[[Missile]]()
+			missile1.target = missile2.target = attacker.transform
+			(missile1.pairedMissile = missile2).pairedMissile = missile1
+			missile1.setRendererEffects()
+			prevHitTargets.Add( attacker.gameObject )
+		</>
+	</>
+</>
+</>

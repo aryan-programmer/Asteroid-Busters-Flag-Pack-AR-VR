@@ -1,0 +1,54 @@
+<QC>
+Using UnityEngine
+Using Utilities
+
+Public <Class> Missile Inherits MonoBehaviour
+#pragma warning disable 0649 _
+	[SerializeField] Float speed
+	[Header( "Renderer Effects" ), SerializeField] RendererRandomizableInformation m_rendInformation
+#pragma warning restore 0649 _
+
+	Internal Transform target
+	Internal Missile pairedMissile
+
+	<Function> Update( )
+		<If> target NotEquals Null
+			transform.LookAt( target )
+			transform.position = Vector3.MoveTowards( transform.position , target.position , Time.deltaTime * 4 * speed )
+		</>
+	</>
+
+	Public <Function> setRendererEffects( )
+		Auto rendInfo = New RendererInformation( m_rendInformation.meshes.GetRandomElement() , m_rendInformation.materials.GetRandomElement() )
+		setRendererState( rendInfo )
+		pairedMissile.setRendererState( rendInfo )
+	</>
+
+	<Function> setRendererState( RendererInformation rendInfo )
+		m_rendInformation.rendererObject.GetComponent[[MeshFilter]]().mesh = rendInfo.mesh
+		m_rendInformation.rendererObject.GetComponent[[MeshCollider]]().sharedMesh = rendInfo.mesh
+		m_rendInformation.rendererObject.GetComponent[[MeshRenderer]]().material = rendInfo.material
+	</>
+
+	Public <Function> OnDestroy( )
+		<If> pairedMissile NotEquals Null
+			Destroy( pairedMissile.gameObject )
+		</>
+	</>
+
+	[System.Serializable] Public <Structure> RendererRandomizableInformation
+		Public GameObject rendererObject
+		Public Mesh[] meshes
+		Public Material[] materials
+	</>
+
+	Public <Structure> RendererInformation
+		Public Mesh mesh
+		Public Material material
+		Public <Function> ( Mesh _mesh , Material _material ) Gives RendererInformation
+			mesh = _mesh
+			material = _material
+		</>
+	</>
+</>
+</>

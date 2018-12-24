@@ -1,0 +1,31 @@
+<QC>
+Using UnityEngine
+Using Utilities
+
+Public <Class> CountryFlag Inherits MonoBehaviour
+	Public Static <Function> Instantiate( Vector3 pos ) Gives CountryFlag
+		Give Instantiate( Prefabs.I[ `CountryFlag` ] , pos , Quaternion.identity ).GetComponent[[CountryFlag]]()
+	</>
+
+	[System.Serializable] <Structure> Statics
+		Public Float FlagDisplayTime
+		Public Texture[] textures
+	</>
+
+	[SerializeField] Statics statics
+
+	<Function> Start( )
+		transform.LookAt( transform.parent = Player.I.transform )
+		Auto rot = transform.localEulerAngles
+		rot.z = 0
+		transform.localEulerAngles = rot
+		transform.parent = Null
+		Auto randTex = statics.textures.GetRandomElement()
+		GetComponent[[MeshRenderer]]().material.mainTexture = randTex
+		Speaker.Speak( randTex.name )
+		print( randTex.name )
+		transform.localScale *= Mathf.Abs( Vector3.Distance( Player.I.transform.position , transform.position ) )
+		Destroy( gameObject , statics.FlagDisplayTime )
+	</>
+</>
+</>
